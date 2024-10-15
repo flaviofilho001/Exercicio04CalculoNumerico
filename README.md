@@ -69,10 +69,10 @@ Nessa questão foi pedido para calcular a quantidade de computadores de cada tip
 ![image](https://github.com/user-attachments/assets/7fa200b5-3b55-443a-ab0d-92177165c634)
 
 Número de computadores de cada tipo:
-Tipo 1: 10.0
-Tipo 2: 12.0
-Tipo 3: 18.0
-Tipo 4: 15.0
+- Tipo 1: 10.0
+- Tipo 2: 12.0
+- Tipo 3: 18.0
+- Tipo 4: 15.0
 
 
 
