@@ -1,0 +1,88 @@
+import numpy as np
+
+# Questão 1:
+
+def simpson_composta(v, t):
+    n = len(t) - 1
+    h = (t[-1] - t[0]) / n
+    soma = v[0] + v[-1]
+    for i in range(1, n, 2):
+        soma += 4 * v[i]
+    for i in range(2, n-1, 2):
+        soma += 2 * v[i]
+    return (h / 3) * soma
+
+
+velocidades = [0, 4.67, 7.34, 8.86, 9.73, 10.22, 10.51, 10.67, 10.76, 10.81, 10.81]  # Velocidades
+tempos = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5,4,4.5,5]        # Tempos
+distancia = simpson_composta(velocidades, tempos)
+print(f"A distância coberta é: {distancia}")
+
+
+#Questão 2
+
+def funcao_pressao(h):
+    return 5 * h**2 + 3 * h + 2
+
+def regra_trapezios(a, b, n):
+    h = (b - a) / n
+    soma = funcao_pressao(a) + funcao_pressao(b)
+    for i in range(1, n):
+        soma += 2 * funcao_pressao(a + i * h)
+    return (h / 2) * soma
+
+# Aplicação para a pressão
+a = 0
+b = 10
+n = 5
+area = regra_trapezios(a, b, n)
+print(f"A área sob a curva da pressão é: {area}")
+
+
+# Questão 3
+
+def gauss_seidel(A, b, eps=1e-3, max_iter=383): #fui testando até chegar esse valor de 383, caso passe
+    n = len(b)                                  #disso o programa fica dando valores inf ou nan nan nan.
+    x = np.zeros(n)
+    iter_count = 0  
+
+    for _ in range(max_iter):
+        x_new = np.copy(x)
+        for i in range(n):
+            sum1 = sum(A[i][j] * x_new[j] for j in range(i))
+            sum2 = sum(A[i][j] * x[j] for j in range(i + 1, n))
+            x_new[i] = (b[i] - sum1 - sum2) / A[i][i]
+        
+        iter_count += 1  
+
+        
+        if np.linalg.norm(x_new - x) < eps:
+            print(f"Solução obtida após {iter_count} iterações.")
+            return x_new
+        x = x_new
+
+    print(f"Interações: {max_iter} iterações.")
+    return x
+
+
+A = np.array([[3, -1, 1], [3, 3, 7], [3, 6, 2]])
+b = np.array([1, 4, 0])
+solucao = gauss_seidel(A, b)
+print(f"Solução obtida: {solucao}")
+
+# Questão 04
+
+A = np.array([[3, 20, 10, 10],   # mão-de-obra
+              [4, 25, 15, 8],   # metais
+              [7, 40, 20, 10],   # plásticos
+              [20, 50, 22, 15]])
+
+b = np.array([504, 1970, 970, 601])
+
+x = np.linalg.solve(A, b)
+
+print("Número de computadores de cada tipo:")
+print("Tipo 1:", int(x[0]))
+print("Tipo 2:", int(x[1]))
+print("Tipo 3:", int(x[2]))
+print("Tipo 4:", int(x[3]))
