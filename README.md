@@ -7,11 +7,11 @@
 
 # Relatório
 
-- Foi utilizado o jupyter notebook com a linguagem python para resolução das questões 1, 2 e 4. Para tal foram utilizados as devidas bibliotecas em python para as melhores finalidades, como o numpy para realizar calculos e utilizar suas funções tais como o np.log para realizar calculos logaritmicos. A biblioteca Pandas para gerar os dataframes e a biblioteca matplotlib que ao utilizar os dataframes do pandas ela plota os gráficos que foram utilizados.
+- Foi utilizado o jupyter notebook com a linguagem python para resolução das questões 1, 2, 3(b) e 4. Para tal foi utilizada a biblioteca em python numpy para realizar os cálculos.
 
 ### Detalhes
 
-- O código está no github no arquivo "questoes", lá está o código em python completo.
+- O código está no github no arquivo "questoes.txt", lá está o código em python completo, ou então no questoes.ipynb.
 
 ### Bibliotecas
 
@@ -69,12 +69,11 @@ Nessa questão foi pedido para calcular a quantidade de computadores de cada tip
 ![image](https://github.com/user-attachments/assets/7fa200b5-3b55-443a-ab0d-92177165c634)
 
 Número de computadores de cada tipo:
-Tipo 1: 89
-Tipo 2: -269
-Tipo 3: 549
-Tipo 4: 12
+Tipo 1: 10.0
+Tipo 2: 12.0
+Tipo 3: 18.0
+Tipo 4: 15.0
 
-Tivemos o valor de x negativo, que foi o -269, significa que a solução não é física, ou seja, não é possível produzir uma quantidade negativa de computadores. Isso pode indicar que os recursos disponíveis não são suficientes para atender à demanda ou que o modelo matemático não é adequado para o problema.
 
 
 
