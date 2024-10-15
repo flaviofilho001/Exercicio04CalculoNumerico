@@ -70,19 +70,21 @@ b = np.array([1, 4, 0])
 solucao = gauss_seidel(A, b)
 print(f"Solução obtida: {solucao}")
 
-# Questão 04
+# Questão 4
 
-A = np.array([[3, 20, 10, 10],   # mão-de-obra
-              [4, 25, 15, 8],   # metais
-              [7, 40, 20, 10],   # plásticos
-              [20, 50, 22, 15]])
+A = np.array([[3, 4, 7, 20],
+              [20, 25, 40, 50],
+              [10, 15, 20, 22],
+              [10, 8, 10, 15]])
 
 b = np.array([504, 1970, 970, 601])
 
 x = np.linalg.solve(A, b)
 
+x_rounded = np.round(x) # Eu arredondei para o inteiro mais proximo
+
 print("Número de computadores de cada tipo:")
-print("Tipo 1:", int(x[0]))
-print("Tipo 2:", int(x[1]))
-print("Tipo 3:", int(x[2]))
-print("Tipo 4:", int(x[3]))
+print("Tipo 1:", x_rounded[0])
+print("Tipo 2:", x_rounded[1])
+print("Tipo 3:", x_rounded[2])
+print("Tipo 4:", x_rounded[3])
